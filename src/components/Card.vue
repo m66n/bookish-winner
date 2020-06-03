@@ -1,5 +1,5 @@
 <template>
-  <div class="flip-card">
+  <div :class="[{'flip-card-show': show}, 'flip-card']">
     <div class="flip-card-inner">
       <div class="flip-card-front">
         Front
@@ -11,13 +11,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: ['show']
+}
+</script>
+
 <style lang="scss">
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 200px;
   border: 1px solid #f1f1f1;
-  perspective: 1000px;
+  perspective: 40em;
+  width: 20em;
+  height: 8em;;
 }
 
 .flip-card-inner {
@@ -29,7 +35,7 @@
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card-show .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -41,7 +47,7 @@
 }
 
 .flip-card-front {
-  background-color: #bbb;
+  background-color: gainsboro;
   color: black;
 }
 
