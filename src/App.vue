@@ -2,7 +2,7 @@
   <div id="app">
     <div class="columns is-mobile is-centered">
       <div class="column is-narrow">
-        <Card :show="show"/>
+        <Card :show="show" :current="nato[current]"/>
       </div>
     </div>
     <div class="columns is-mobile is-centered">
@@ -25,6 +25,7 @@
 
 <script>
 import Card from './components/Card.vue'
+import nato from './data/nato'
 
 export default {
   name: 'App',
@@ -33,15 +34,21 @@ export default {
   },
   data () {
     return {
-      show: false
+      show: false,
+      nato: nato,
+      current: 0
     }
   },
   methods: {
     next () {
       this.show = false
+      if (this.current < this.nato.length - 1) {
+        this.current += 1
+      }
     },
     reset () {
       this.show = false
+      this.current = 0
     }
   }
 }
