@@ -12,7 +12,7 @@
             <button class="button" @click="show = true" :disabled="show">Show</button>
           </p>
           <p class="control">
-            <button class="button" @click="next()">Next</button>
+            <button class="button" @click="next()" :disabled="current===nato.length-1">Next</button>
           </p>
           <p class="control">
             <button class="button" @click="reset()">Reset</button>
@@ -33,6 +33,9 @@ export default {
   components: {
     Card
   },
+  created () {
+    this.reset()
+  },
   data () {
     return {
       show: false,
@@ -43,9 +46,7 @@ export default {
   methods: {
     next () {
       this.show = false
-      if (this.current < this.nato.length - 1) {
-        this.current += 1
-      }
+      this.current += 1
     },
     reset () {
       this.show = false

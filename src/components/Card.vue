@@ -30,11 +30,12 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
+  transition: transform 0s;
   transform-style: preserve-3d;
 }
 
 .flip-card-show .flip-card-inner {
+  transition: transform 0.8s;
   transform: rotateY(180deg);
 }
 
