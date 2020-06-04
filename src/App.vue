@@ -26,6 +26,7 @@
 <script>
 import Card from './components/Card.vue'
 import nato from './data/nato'
+import shuffle from './util/shuffle'
 
 export default {
   name: 'App',
@@ -49,6 +50,7 @@ export default {
     reset () {
       this.show = false
       this.current = 0
+      shuffle(this.nato)
     }
   }
 }
