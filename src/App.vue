@@ -7,6 +7,11 @@
     </div>
     <div class="columns is-mobile is-centered">
       <div class="column is-narrow">
+        <p>{{current+1}}/{{nato.length}}</p>
+      </div>
+    </div>
+    <div class="columns is-mobile is-centered">
+      <div class="column is-narrow">
         <div class="field is-grouped">
           <p class="control">
             <button class="button" @click="show = true" :disabled="show">Show</button>
@@ -18,6 +23,11 @@
             <button class="button" @click="reset()">Reset</button>
           </p>
         </div>
+      </div>
+    </div>
+    <div class="columns is-mobile is-centered">
+      <div class="column is-narrow">
+        <a href="https://github.com/m66n/bookish-winner" target="_blank">GitHub</a>
       </div>
     </div>
   </div>
